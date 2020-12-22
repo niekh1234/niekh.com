@@ -437,6 +437,9 @@
           <form name="contact" class="grid grid-rows-2 grid-cols-3 w-full gap-4 mt-8" netlify>
             <label for="name_field" class="text-white font-semibold col-span-1 mx-auto my-auto">Naam</label>
             <input
+              required
+              oninvalid="this.setCustomValidity('Dit veld is verplicht')"
+              onchange="this.setCustomValidity('')"
               id="name_field"
               type="text"
               name="name"
@@ -446,6 +449,9 @@
               >E-mail</label
             >
             <input
+              required
+              oninvalid="this.setCustomValidity('Dit veld is verplicht')"
+              onchange="this.setCustomValidity('')"
               id="email_field"
               type="text"
               name="email"
