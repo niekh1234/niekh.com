@@ -1,5 +1,6 @@
 import './css/styles.css';
 import 'alpinejs';
+import 'contentful';
 import './assets/images/ecoscoot_showcase.jpg';
 import './assets/images/goedkoopschap.png';
 import './assets/images/moetikeentest.png';

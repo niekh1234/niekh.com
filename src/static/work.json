@@ -16,21 +16,6 @@
       }
     },
     {
-      "title": "moetikeentest.nl",
-      "date": "Oktober 2020",
-      "summary": "Moetikeentest.nl is een simpele website om te kijken of het slim is om een COVID-19 test te doen.",
-      "technologies": ["NuxtJS", "HTML", "Tailwindcss"],
-      "href": "https://www.moetikeentest.nl/",
-      "image": {
-        "src": "assets/images/moetikeentest.png",
-        "alt": "Afbeelding website moetikeentest.nl"
-      },
-      "details": {
-        "what": "Moetikeentest.nl is een simpele website waarop je door middel van 6 vragen een advies krijgt over of je een COVID-19 test nodig hebt. Het advies is gebasseerd op de huidige regelingen van het RIVM.",
-        "how": "<h4 class=\"text-xl font-light text-grey-dark\">NuxtJS</h4><p class=\"text-midnight\">Ik heb deze website met NuxtJS gemaakt, wat eigenlijk niet nodig was, omdat VueJS al voldoende zou zijn. Dit was een van mijn eerst projecten met Nuxt. Dus ik vond het belangrijk om het ook gelijk te gebruiken.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">CSS transitions</h4><p>Tijdens dit project heb ik ook meer geleerd over css transitions, na het beantwoorden van een vraag schuift het scherm door naar de volgende vraag. Ook scherm met de resultaten zijn er een aantal transities te zien.</p>"
-      }
-    },
-    {
       "title": "goedkoopschap.nl",
       "date": "September 2020",
       "summary": "Met goedkoopschap.nl kun je op verschillende supermarkten producten tegelijk zoeken en vergelijken.",
@@ -58,6 +43,21 @@
       "details": {
         "what": "Deze website is voor mij back to basics, ik heb gekozen om AlpineJS te gebruiken in plaats van Vue omdat dit wat lichter is maar toch meer flexibiliteit dan vanilla JS geeft.",
         "how": "<h4 class=\"text-xl font-light text-grey-dark\">AlpineJS</h4><p class=\"text-midnight\">AlineJS is lichter dan Vue, maar biedt veel van dezelfde core functionaliteit. Deze website gebruikt het voor alles javascript gericht.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Webpack</h4><p class=\"text-midnight\">Om alle css, json, javascript en afbeeldingen te laden en orderen heb ik voor het eerst webpack gebruikt.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Tailwindcss</h4><p class=\"text-midnight\">Om een snel responsive design te maken is tailwind css gebruikt.</p>"
+      }
+    },
+    {
+      "title": "moetikeentest.nl",
+      "date": "Oktober 2020",
+      "summary": "Moetikeentest.nl is een simpele website om te kijken of het slim is om een COVID-19 test te doen.",
+      "technologies": ["NuxtJS", "HTML", "Tailwindcss"],
+      "href": "https://www.moetikeentest.nl/",
+      "image": {
+        "src": "assets/images/moetikeentest.png",
+        "alt": "Afbeelding website moetikeentest.nl"
+      },
+      "details": {
+        "what": "Moetikeentest.nl is een simpele website waarop je door middel van 6 vragen een advies krijgt over of je een COVID-19 test nodig hebt. Het advies is gebasseerd op de huidige regelingen van het RIVM.",
+        "how": "<h4 class=\"text-xl font-light text-grey-dark\">NuxtJS</h4><p class=\"text-midnight\">Ik heb deze website met NuxtJS gemaakt, wat eigenlijk niet nodig was, omdat VueJS al voldoende zou zijn. Dit was een van mijn eerst projecten met Nuxt. Dus ik vond het belangrijk om het ook gelijk te gebruiken.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">CSS transitions</h4><p>Tijdens dit project heb ik ook meer geleerd over css transitions, na het beantwoorden van een vraag schuift het scherm door naar de volgende vraag. Ook scherm met de resultaten zijn er een aantal transities te zien.</p>"
       }
     }
   ]

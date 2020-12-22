@@ -578,6 +578,11 @@
         fetch('static/work.json')
           .then((response) => response.json())
           .then((json) => (this.work = json.work));
+
+        const client = contentful.createClient({
+          space: '1lkyrc2xzsor',
+          accessToken: 'jkSWIVy5G0yWVw1jz4ooNBjk9LWgDNVYQvcJu-IrCfw',
+        });
       },
       work: null,
       expandedWorkSection: null,

@@ -12,7 +12,8 @@
   "license": "MIT",
   "dependencies": {
     "alpinejs": "^2.7.3",
-    "autoprefixer": "^10.1.0"
+    "autoprefixer": "^10.1.0",
+    "contentful": "^8.1.4"
   },
   "devDependencies": {
     "css-loader": "^5.0.1",
