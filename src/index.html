@@ -1,21 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <article class="w-screen min-h-screen bg-red" x-data="test()" @click="xd"></article>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" hid="Main" content="Niek Hagen" />
+    <title>Niek Hagen</title>
+  </head>
+  <body class="overflow-x-hidden" x-data="main()" @scroll.window="scrollBehavior" x-cloak>
+    <nav>
+      <!-- Desktop (dot) navigation -->
+      <div
+        class="fixed rounded-full z-30 w-8 py-4 h-auto flex flex-col items-center -right-8 md:right-1 transition-all duration-300"
+        style="top: 40%"
+        x-bind:class="primaryNavColor"
+      >
+        <template x-for="item in navItems">
+          <button
+            class="h-10 w-full bg-transparent flex items-center justify-center group focus:outline-none"
+            @click="smoothScrollTo(item.key + 1)"
+            @mouseover="tooltip = item"
+            @mouseleave="tooltip = null"
+            :aria-label="'Navigeer naar: ' + item.name"
+          >
+            <div
+              class="w-4 h-4 rounded-full my-3 border-2 focus:outline-none md:group-hover:bg-blue-light transition-colors relative"
+              style="padding: 2px"
+              x-bind:class="[item.active ? secondaryNavColor : primaryNavColor, navBorderColor]"
+            >
+              <div
+                x-show="item === tooltip"
+                class="w-40 h-12 absolute right-7 rounded-xl flex flex-nowrap items-center justify-center border-2 border-white"
+                x-bind:class="primaryNavColor"
+                style="bottom: -140%"
+              >
+                <h3 x-text="item.name" class="text-xl font-semibold mx-4 inline" x-bind:class="navTextColor"></h3>
+              </div>
+            </div>
+          </button>
+        </template>
+      </div>
+
+      <!-- Mobile nav -->
+      <div
+        class="fixed w-16 h-16 rounded-full z-30 bg-midnight flex items-center justify-center p-2 right-4 md:-right-16 transition-all duration-300"
+        style="bottom: 5%"
+        role="button"
+        @click="showMobileMenu = !showMobileMenu"
+        @click.away="showMobileMenu = false"
+        x-on:resize.window="showMobileMenu = false"
+      >
+        <svg
+          class="w-full h-full stroke-current text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+
+        <div
+          class="bg-midnight absolute bottom-20 w-48 rounded-lg flex flex-col items-start py-2 transition-all"
+          x-bind:class="showMobileMenu ? 'opacity-100 right-2' : 'opacity-0 -right-56'"
+          @click.stop
+        >
+          <template x-for="item in navItems">
+            <button
+              x-text="item.name"
+              class="font-bold w-full py-2 text-xl"
+              @click="smoothScrollTo(item.key + 1); showMobileMenu = false;"
+              :class="item.active ? 'text-orange' : 'text-white'"
+            ></button>
+          </template>
+        </div>
+      </div>
+    </nav>
+
+    <article class="absolute top-0 left-0">
+      <section class="w-screen h-screen flex flex-col items-center justify-center relative" id="section_1">
+        <!-- background svg -->
+        <svg
+          class="w-screen h-screen absolute top-0 bottom-0"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svgjs="http://svgjs.com/svgjs"
+          width="720"
+          height="480"
+          preserveAspectRatio="none"
+          viewBox="0 0 720 480"
+        >
+          <g mask='url("#SvgjsMask12562")' fill="none">
+            <rect width="720" height="480" x="0" y="0" fill="url(#SvgjsLinearGradient12563)"></rect>
+            <path
+              d="M547 294L546 119"
+              stroke-width="10"
+              stroke="url(#SvgjsLinearGradient12564)"
+              stroke-linecap="round"
+              class="Down"
+            ></path>
+            <path
+              d="M455 168L454 32"
+              stroke-width="8"
+              stroke="url(#SvgjsLinearGradient12564)"
+              stroke-linecap="round"
+              class="Down"
+            ></path>
+            <path
+              d="M468 23L467 -326"
+              stroke-width="6"
+              stroke="url(#SvgjsLinearGradient12565)"
+              stroke-linecap="round"
+              class="Up"
+            ></path>
+            <path
+              d="M463 464L462 738"
+              stroke-width="6"
+              stroke="url(#SvgjsLinearGradient12564)"
+              stroke-linecap="round"
+              class="Down"
+            ></path>
+            <path
+              d="M465 366L464 148"
+              stroke-width="8"
+              stroke="url(#SvgjsLinearGradient12565)"
+              stroke-linecap="round"
+              class="Up"
+            ></path>
+            <path
+              d="M315 408L314 63"
+              stroke-width="10"
+              stroke="url(#SvgjsLinearGradient12564)"
+              stroke-linecap="round"
+              class="Down"
+            ></path>
+            <path
+              d="M516 112L515 289"
+              stroke-width="6"
+              stroke="url(#SvgjsLinearGradient12564)"
+              stroke-linecap="round"
+              class="Down"
+            ></path>
+            <path
+              d="M5 109L4 282"
+              stroke-width="8"
+              stroke="url(#SvgjsLinearGradient12565)"
+              stroke-linecap="round"
+              class="Up"
+            ></path>
+            <path
+              d="M22 321L21 544"
+              stroke-width="10"
+              stroke="url(#SvgjsLinearGradient12565)"
+              stroke-linecap="round"
+              class="Up"
+            ></path>
+            <path
+              d="M235 458L234 137"
+              stroke-width="6"
+              stroke="url(#SvgjsLinearGradient12564)"
+              stroke-linecap="round"
+              class="Down"
+            ></path>
+            <path
+              d="M7 369L6 581"
+              stroke-width="10"
+              stroke="url(#SvgjsLinearGradient12565)"
+              stroke-linecap="round"
+              class="Up"
+            ></path>
+            <path
+              d="M547 309L546 63"
+              stroke-width="10"
+              stroke="url(#SvgjsLinearGradient12564)"
+              stroke-linecap="round"
+              class="Down"
+            ></path>
+            <path
+              d="M37 129L36 321"
+              stroke-width="6"
+              stroke="url(#SvgjsLinearGradient12565)"
+              stroke-linecap="round"
+              class="Up"
+            ></path>
+            <path
+              d="M588 432L587 627"
+              stroke-width="10"
+              stroke="url(#SvgjsLinearGradient12564)"
+              stroke-linecap="round"
+              class="Down"
+            ></path>
+            <path
+              d="M545 127L544 -114"
+              stroke-width="6"
+              stroke="url(#SvgjsLinearGradient12565)"
+              stroke-linecap="round"
+              class="Up"
+            ></path>
+            <path
+              d="M136 250L135 432"
+              stroke-width="6"
+              stroke="url(#SvgjsLinearGradient12565)"
+              stroke-linecap="round"
+              class="Up"
+            ></path>
+            <path
+              d="M131 35L130 258"
+              stroke-width="10"
+              stroke="url(#SvgjsLinearGradient12564)"
+              stroke-linecap="round"
+              class="Down"
+            ></path>
+            <path
+              d="M623 394L622 224"
+              stroke-width="8"
+              stroke="url(#SvgjsLinearGradient12565)"
+              stroke-linecap="round"
+              class="Up"
+            ></path>
+          </g>
+          <defs>
+            <mask id="SvgjsMask12562">
+              <rect width="720" height="480" fill="#ffffff"></rect>
+            </mask>
+            <linearGradient
+              x1="8.33%"
+              y1="112.5%"
+              x2="91.67%"
+              y2="-12.5%"
+              gradientUnits="userSpaceOnUse"
+              id="SvgjsLinearGradient12563"
+            >
+              <stop stop-color="rgba(52, 144, 220, 1)" offset="0"></stop>
+              <stop stop-color="rgba(255, 255, 255, 1)" offset="0"></stop>
+            </linearGradient>
+            <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="SvgjsLinearGradient12564">
+              <stop stop-color="rgba(228, 243, 255, 0)" offset="0"></stop>
+              <stop stop-color="rgba(228, 243, 255, 1)" offset="1"></stop>
+            </linearGradient>
+            <linearGradient x1="0%" y1="100%" x2="0%" y2="0%" id="SvgjsLinearGradient12565">
+              <stop stop-color="rgba(228, 243, 255, 0)" offset="0"></stop>
+              <stop stop-color="rgba(228, 243, 255, 1)" offset="1"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <!-- content -->
+        <section class="w-11/12 sm:w-5/6 xl:w-2/3 2xl:w-1/2 h-3/5 lg:h-1/2 z-20 mt-auto flex flex-row">
+          <div class="w-full p-4 flex flex-col justify-center">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold font-sans text-midnight">Niek Hagen</h1>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-sans text-blue mt-2">Web oplossingen</h2>
+
+            <p class="text-grey-darker text-lg sm:text-xl md:text-2xl font-medium mt-4 leading-10">
+              Ik maak vol <span class="bg-blue text-white">passie en enthousiasme</span> websites buiten de norm.<br />
+              Leuk idee? Laten we het
+              <button class="bg-orange text-white focus:outline-none" @click="smoothScrollTo(5)">samen</button>
+              realiseren
+            </p>
+            <button
+              class="bg-blue rounded-full px-6 py-3 md:px-12 md:py-4 text-white text-2xl font-semibold mt-12 hover:shadow-xl transition-all mr-auto"
+              @click="smoothScrollTo(4)"
+            >
+              Contact
+            </button>
+          </div>
+        </section>
+
+        <!-- Navigate to second section arrow -->
+        <button
+          @click="smoothScrollTo(2)"
+          class="animate-bounce absolute bottom-0 z-40"
+          style="left: 50%"
+          aria-label="Navigeer naar de tweede sectie"
+        >
+          <svg
+            class="fill-current text-white w-8 h-8 md:w-12 md:h-12"
+            version="1.1"
+            x="0px"
+            y="0px"
+            viewBox="0 0 256 256"
+            xml:space="preserve"
+          >
+            <g>
+              <g>
+                <polygon points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093" />
+              </g>
+            </g>
+          </svg>
+        </button>
+
+        <!-- wave -->
+        <div class="mt-auto h-auto w-full flex flex-col items-center z-10">
+          <div class="custom-shape-divider-bottom-1607724471 w-full">
+            <svg
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-screen min-h-screen bg-blue flex flex-col items-center py-16" id="section_2">
+        <div
+          class="w-11/12 sm:w-5/6 md:w-3/4 xl:w-2/3 2xl:w-3/5 self-center flex flex-col items-center h-full lg:h-3/5"
+        >
+          <p class="text-white text-light text-center uppercase text-xl">Skills</p>
+          <h2 class="font-bold text-white text-3xl sm:text-4xl text-center mt-2">Wat doe ik allemaal?</h2>
+          <h3 class="text-center text-grey-lighter text-xl sm:text-2xl font-normal max-w-40vw xl:max-w-20vw mt-6">
+            Door het gebruik van moderne technologiën voor het web maak ik razendsnelle en simpele gebruikerservaringen.
+          </h3>
+
+          <div
+            class="h-full w-full grid grid-cols-1 lg:grid-cols-2 grid-rows-6 lg:grid-rows-3 mt-8 gap-1"
+            x-data="skills()"
+            x-init="setup()"
+          >
+            <template x-if="skills !== null" x-for="skill in skills">
+              <div class="flex flex-row p-4">
+                <div class="w-1/6 h-full flex justify-center py-3">
+                  <svg
+                    class="w-12 h-12 rounded-lg p-2 bg-white stroke-current text-orange"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="skill.icon_d"></path>
+                  </svg>
+                </div>
+                <div class="w-5/6 h-full flex flex-col py-3 px-2">
+                  <h3 x-text="skill.title" class="text-white font-medium text-xl"></h3>
+                  <p x-text="skill.content" class="text-white font-normal text-md"></p>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-screen min-h-screen bg-grey-lighter flex flex-col items-center py-16" id="section_3">
+        <div
+          class="w-11/12 sm:w-5/6 md:w-3/4 xl:w-2/3 2xl:w-3/5 self-center flex flex-col relative"
+          x-data="work()"
+          x-init="setup()"
+        >
+          <h3 class="text-4xl font-bold text-blue">Mijn werk</h3>
+
+          <template x-if="work !== null" x-for="project in work">
+            <div
+              class="w-full h-auto lg:min-h-40vw xl:min-h-30vw 2xl:min-h-20vw bg-white rounded-lg shadow-lg mt-8 transition transform md:hover:-translate-y-2 md:hover:shadow-xl"
+            >
+              <!-- base content -->
+              <div class="p-4 lg:p-8 flex flex-col lg:flex-row w-full h-full">
+                <div class="h-auto w-full min-h-full lg:w-1/2 bg-white flex flex-col items-start pr-8">
+                  <p class="text-grey text-xl font-light" x-text="project.date"></p>
+                  <h2 class="mt-2 text-2xl font-bold text-midnight" x-text="project.title"></h2>
+                  <p class="mt-4 text-midnight text-md sm:text-lg" x-text="project.summary"></p>
+
+                  <div class="flex flex-row flex-wrap items-center w-full mt-8 lg:mt-auto">
+                    <p class="text-grey-dark text-light mr-4">Technologiën:</p>
+                    <template x-for="technology in project.technologies">
+                      <div class="bg-grey-lighter rounded-full px-3 py-1 mr-2 m-1">
+                        <p class="text-blue font-semibold text-sm" x-text="technology"></p>
+                      </div>
+                    </template>
+                  </div>
+
+                  <div class="flex flex-row w-full justify-between mt-4">
+                    <div
+                      class="flex flex-row items-center"
+                      @click="expandedWorkSection !== project ? expandedWorkSection = project : expandedWorkSection = null"
+                    >
+                      <button
+                        class="text-orange font-semibold text-xl md:hover:underline focus:outline-none mr-2"
+                        x-text="expandedWorkSection !== project ? 'Details' : 'Verbergen'"
+                      ></button>
+                      <svg
+                        class="w-6 h-6 stroke-current text-midnight mt-1 transform transition-transform duration-200"
+                        x-bind:class="expandedWorkSection !== project ? '' : '-rotate-180'"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </div>
+                    <a
+                      class="text-orange font-semibold text-xl md:hover:text-orange-dark transition-colors"
+                      :href="project.href"
+                    >
+                      Bezoeken
+                    </a>
+                  </div>
+                </div>
+                <div class="h-30vh md:h-40vh w-full lg:h-auto lg:w-1/2 mt-8 lg:my-auto">
+                  <img
+                    :src="project.image.src"
+                    class="w-full h-full object-cover object-top lg:object-left-top"
+                    :alt="project.image.alt"
+                  />
+                </div>
+              </div>
+
+              <!-- expanded content -->
+              <div
+                class="w-full bg-white rounded-b-xl overflow-hidden flex justify-center"
+                x-bind:class="expandedWorkSection === project ? 'h-auto' : 'h-0'"
+              >
+                <div class="w-full h-full px-4 pb-4 lg:px-8 lg:pb-8 flex flex-col xl:flex-row">
+                  <div class="flex flex-col w-full xl:w-1/2 xl:pr-4">
+                    <h3 class="text-xl text-midnight font-semibold">Wat</h3>
+                    <p class="mt-2 text-midnight text-md sm:text-lg" x-text="project.details.what"></p>
+                  </div>
+                  <div class="flex flex-col w-full xl:w-1/2 xl:pl-4 mt-6 xl:mt-0">
+                    <h3 class="text-xl text-midnight font-semibold">Hoe</h3>
+                    <p class="mt-2 text-midnight text-md sm:text-lg" x-html="project.details.how"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </section>
+
+      <footer class="w-screen h-auto bg-blue-darkest flex flex-col items-center py-16" id="section_4">
+        <div class="w-11/12 sm:w-5/6 md:w-3/4 xl:w-2/3 2xl:w-1/2 h-auto flex flex-col items-center">
+          <h3 class="font-bold text-white text-3xl sm:text-4xl text-center mt-2">Neem contact op</h3>
+          <h3 class="text-center text-grey-lighter text-xl sm:text-2xl font-normal max-w-40vw xl:max-w-20vw mt-6">
+            Heb je een leuk idee? Laten we het samen maken.
+          </h3>
+          <form name="contact" class="grid grid-rows-2 grid-cols-3 w-full gap-4 mt-8" netlify>
+            <label for="name_field" class="text-white font-semibold col-span-1 mx-auto my-auto">Naam</label>
+            <input
+              id="name_field"
+              type="text"
+              name="name"
+              class="rounded-lg col-span-2 h-8 border-2 border-blue bg-grey-lighter px-2"
+            />
+            <label for="email_field" class="text-white font-semibold col-span-1 mx-auto my-auto col-start-1"
+              >E-mail</label
+            >
+            <input
+              id="email_field"
+              type="text"
+              name="email"
+              class="rounded-lg col-span-2 border-2 border-blue bg-grey-lighter px-2"
+            />
+            <label for="question_field" class="text-white font-semibold col-span-1 mx-auto my-auto col-start-1"
+              >Bericht</label
+            >
+            <textarea
+              name="question_description"
+              id="question_field"
+              class="rounded-lg col-span-2 row-span-2 col-start-2 border-2 border-blue bg-grey-lighter px-2"
+            ></textarea>
+            <button
+              type="submit"
+              class="col-start-1 lg:col-start-3 row-start-5 ml-auto my-auto text-grey-lighter font-semibold text-xl bg-orange rounded-lg px-2 py-1"
+            >
+              Versturen
+            </button>
+          </form>
+        </div>
+        <hr class="w-11/12 h-2 mt-12" />
+        <div class="w-full h-auto flex flex-row justify-between items-center px-8 md:px-16 mb-16 lg:mb-4">
+          <p
+            class="text-grey-lighter text-md sm:text-lg md:text-xl"
+            x-text="'© ' + (new Date()).getFullYear() + ' Niek Hagen'"
+          ></p>
+          <div class="flex flex-row w-auto h-auto">
+            <a href="https://www.github.com/niekh1234" title="GitHub" class="mr-4">
+              <svg viewBox="0 0 512 512" class="w-10 h-10">
+                <path
+                  fill="white"
+                  d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"
+                />
+              </svg>
+            </a>
+            <a href="mailto:niekhagen@hotmail.com" title="niekhagen@hotmail.com" class="mr-4">
+              <svg
+                class="w-10 h-10 stroke-current text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </a>
+            <a href="https://github.com/niekh1234/niekh.com" title="Source code">
+              <svg
+                class="w-10 h-10 stroke-current text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </body>
 </html>
 
 <script>
-  function test() {
+  function main() {
     return {
-      xd() {
-        console.log('xd');
-      }
-    }
+      navItems: [
+        { key: 0, active: true, name: 'Introductie' },
+        { key: 1, active: false, name: 'Wat ik doe' },
+        { key: 2, active: false, name: 'Werk' },
+        { key: 3, active: false, name: 'Contact' },
+      ],
+      primaryNavColor: 'bg-blue',
+      secondaryNavColor: 'bg-white',
+      navBorderColor: 'border-white',
+      navTextColor: 'text-white',
+      tooltip: null,
+      showMobileMenu: false,
+
+      smoothScrollTo(index) {
+        document.querySelector(`#section_${index}`).scrollIntoView({
+          behavior: 'smooth',
+        });
+      },
+
+      scrollBehavior() {
+        for (let item in this.navItems) {
+          const boundingRect = document.querySelector(`#section_${parseInt(item, 10) + 1}`).getBoundingClientRect();
+          const activationPoint = Math.max(boundingRect.top + window.scrollY - 600, 0);
+          const deactivationPoint = Math.max(boundingRect.bottom + window.scrollY - 600, 0);
+
+          this.navItems[item].active = activationPoint <= window.scrollY && window.scrollY < deactivationPoint;
+        }
+
+        // not looking great but this is done to help purgecss, could also try concatinate text, bg, border with {color} but would purge.
+        if (this.navItems[1].active || this.navItems[3].active) {
+          this.primaryNavColor = 'bg-white';
+          this.secondaryNavColor = 'bg-blue';
+          this.navBorderColor = 'border-blue';
+          this.navTextColor = 'text-blue';
+        } else {
+          this.primaryNavColor = 'bg-blue';
+          this.secondaryNavColor = 'bg-white';
+          this.navBorderColor = 'border-white';
+          this.navTextColor = 'text-white';
+        }
+      },
+    };
+  }
+
+  function work() {
+    return {
+      setup() {
+        fetch('static/work.json')
+          .then((response) => response.json())
+          .then((json) => (this.work = json.work));
+      },
+      work: null,
+      expandedWorkSection: null,
+    };
+  }
+
+  function skills() {
+    return {
+      setup() {
+        fetch('static/skills.json')
+          .then((response) => response.json())
+          .then((json) => (this.skills = json.skills));
+      },
+      skills: null,
+    };
   }
 </script>
+
+<style>
+  [x-cloak] {
+    display: none;
+  }
+
+  .custom-shape-divider-bottom-1607724471 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    transform: rotateY(180deg);
+  }
+
+  .custom-shape-divider-bottom-1607724471 .shape-fill {
+    fill: #3490dc;
+  }
+</style>

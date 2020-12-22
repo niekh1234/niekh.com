@@ -27,18 +27,43 @@ module.exports = {
             },
           },
           'postcss-loader',
-        ]
+        ],
       },
       {
         test: /\.html$/,
-        use: ['html-loader']
+        use: ['html-loader'],
       },
-    ]
+      {
+        test: /\.(jpg|png)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './assets/images/',
+              publicPath: './assets/images/',
+            },
+          },
+        ],
+      },
+      {
+        type: 'javascript/auto',
+        test: /\.json$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './static/',
+              publicPath: './static/',
+            },
+          },
+        ],
+      },
+    ],
   },
 
   devServer: {
-    watchContentBase: true,
-    contentBase: path.resolve(__dirname, 'dist'),
-    open: true,
-  }
+    host: 'localhost',
+  },
 };

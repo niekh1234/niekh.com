@@ -1,0 +1,64 @@
+{
+  "work": [
+    {
+      "title": "ecoscoot.nl",
+      "date": "November 2020",
+      "summary": "Deze website presenteert op een simpele maar moderne manier het assortiment van ecoscoot.nl.",
+      "technologies": ["NuxtJS", "Tailwindcss", "Firebase", "HTML", "Google Analytics", "Storyblok CMS"],
+      "href": "https://www.ecoscoot.nl/",
+      "image": {
+        "src": "/assets/images/ecoscoot_showcase.jpg",
+        "alt": "Afbeelding website ecoscoot.nl"
+      },
+      "details": {
+        "what": "Ecoscoot.nl is een website geschreven met de boodschap om informatie over de elektrische scooters en het bedrijf van ecoscoot.nl over te brengen. De focus is gericht op het laten zien van de producten door middel van afbeeldingen en beschrijvingen. In de toekomst gaat deze website een webshop worden, momenteel staat hier de funderingen al voor.",
+        "how": "<h4 class=\"text-xl font-light text-grey-dark\">NuxtJS</h4><p class=\"text-midnight\">De front-end van deze website is volledig in NuxtJS geschreven. Hier heb ik voor gekozen omdat ik alle voordelen van een single page Vue applicatie zocht, maar ook de SEO en SSR die Nuxt biedt. Verder is het developen in Nuxt veel fijner.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Firebase</h4><p class=\"text-midnight\">Op deze website kunnen mensen een proefrit boeken, om dit te synchroniseren, valideren en emails te sturen heb ik firebase gebruikt. Zodra iemand op de website boekt, krijgen ze een e-mail toegestuurd. Aan het einde van de dag krijgen de eigenaren van de website een email met alle proefritten voor de volgende dag. Om dit systeem te maken heb ik veel geleerd van firestore security rules en het goed omgaan met private data.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Storyblok CMS</h4><p class=\"text-midnight\">De meeste tekst en afbeelding zijn opgeslagen op deze headless CMS zodat er eenvoudig content aangepast kan worden zonder de technische details te snappen.</p>"
+      }
+    },
+    {
+      "title": "moetikeentest.nl",
+      "date": "Oktober 2020",
+      "summary": "Moetikeentest.nl is een simpele website om te kijken of het slim is om een COVID-19 test te doen.",
+      "technologies": ["NuxtJS", "HTML", "Tailwindcss"],
+      "href": "https://www.moetikeentest.nl/",
+      "image": {
+        "src": "assets/images/moetikeentest.png",
+        "alt": "Afbeelding website moetikeentest.nl"
+      },
+      "details": {
+        "what": "Moetikeentest.nl is een simpele website waarop je door middel van 6 vragen een advies krijgt over of je een COVID-19 test nodig hebt. Het advies is gebasseerd op de huidige regelingen van het RIVM.",
+        "how": "<h4 class=\"text-xl font-light text-grey-dark\">NuxtJS</h4><p class=\"text-midnight\">Ik heb deze website met NuxtJS gemaakt, wat eigenlijk niet nodig was, omdat VueJS al voldoende zou zijn. Dit was een van mijn eerst projecten met Nuxt. Dus ik vond het belangrijk om het ook gelijk te gebruiken.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">CSS transitions</h4><p>Tijdens dit project heb ik ook meer geleerd over css transitions, na het beantwoorden van een vraag schuift het scherm door naar de volgende vraag. Ook scherm met de resultaten zijn er een aantal transities te zien.</p>"
+      }
+    },
+    {
+      "title": "goedkoopschap.nl",
+      "date": "September 2020",
+      "summary": "Met goedkoopschap.nl kun je op verschillende supermarkten producten tegelijk zoeken en vergelijken.",
+      "technologies": ["VueJS", "HTML", "Tailwindcss", "NodeJS", "ExpressJS", "Nginx", "MongoDB"],
+      "href": "https://www.goedkoopschap.nl/",
+      "image": {
+        "src": "assets/images/goedkoopschap.png",
+        "alt": "Afbeelding website goedkoopschap.nl"
+      },
+      "details": {
+        "what": "Goedkoopschap is een full-stack applicatie waarin de client gebruik maakt van een NodeJS REST-api om op verschillende supermarkten tegelijk te kunnen zoeken.",
+        "how": "<h4 class=\"text-xl font-light text-grey-dark\">ExpressJS</h4><p class=\"text-midnight\">Om een simpele REST api te kunnen maken heb ik een ExpressJS gebruikt, deze wordt op een NodeJS server gedraaid. Voor inkomende HTTP verzoeken staat dit op een nginx server.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">MongoDB</h4><p class=\"text-midnight\">Alle zoektermen en producten worden gecached en opgeslagen in een MongoDB (database) om volgende verzoeken te versnellen. Er is hier gekozen voor een nosql formaat omdat het flexibel en snel is.</p>"
+      }
+    },
+    {
+      "title": "niekh.com",
+      "date": "December 2020",
+      "summary": "Om mijn oude portfolio een keer te verbeteren, besloot ik dat het tijd was om alles wat ik tot nu toe geleerd heb toe te passen op mijn persoonlijke website.",
+      "technologies": ["AlpineJS", "HTML", "Tailwindcss", "Webpack"],
+      "href": "https://www.niekh.com/",
+      "image": {
+        "src": "assets/images/niekh_showcase.png",
+        "alt": "Afbeelding website niekh.com"
+      },
+      "details": {
+        "what": "Deze website is voor mij back to basics, ik heb gekozen om AlpineJS te gebruiken in plaats van Vue omdat dit wat lichter is maar toch meer flexibiliteit dan vanilla JS geeft.",
+        "how": "<h4 class=\"text-xl font-light text-grey-dark\">AlpineJS</h4><p class=\"text-midnight\">AlineJS is lichter dan Vue, maar biedt veel van dezelfde core functionaliteit. Deze website gebruikt het voor alles javascript gericht.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Webpack</h4><p class=\"text-midnight\">Om alle css, json, javascript en afbeeldingen te laden en orderen heb ik voor het eerst webpack gebruikt.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Tailwindcss</h4><p class=\"text-midnight\">Om een snel responsive design te maken is tailwind css gebruikt.</p>"
+      }
+    }
+  ]
+}
