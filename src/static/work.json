@@ -42,7 +42,7 @@
       },
       "details": {
         "what": "Deze website is voor mij back to basics, ik heb gekozen om AlpineJS te gebruiken in plaats van Vue omdat dit wat lichter is maar toch meer flexibiliteit dan vanilla JS geeft.",
-        "how": "<h4 class=\"text-xl font-light text-grey-dark\">AlpineJS</h4><p class=\"text-midnight\">AlineJS is lichter dan Vue, maar biedt veel van dezelfde core functionaliteit. Deze website gebruikt het voor alles javascript gericht.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Webpack</h4><p class=\"text-midnight\">Om alle css, json, javascript en afbeeldingen te laden en orderen heb ik voor het eerst webpack gebruikt.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Tailwindcss</h4><p class=\"text-midnight\">Om een snel responsive design te maken is tailwind css gebruikt.</p>"
+        "how": "<h4 class=\"text-xl font-light text-grey-dark\">AlpineJS</h4><p class=\"text-midnight\">AlpineJS is lichter dan Vue, maar biedt veel van dezelfde core functionaliteit. Deze website gebruikt het voor alles javascript gericht.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Webpack</h4><p class=\"text-midnight\">Om alle css, json, javascript en afbeeldingen te laden en orderen heb ik voor het eerst webpack gebruikt.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Tailwindcss</h4><p class=\"text-midnight\">Om een snel responsive design te maken is tailwind css gebruikt.</p>"
       }
     },
     {
