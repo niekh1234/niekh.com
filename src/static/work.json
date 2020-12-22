@@ -26,7 +26,7 @@
         "alt": "Afbeelding website goedkoopschap.nl"
       },
       "details": {
-        "what": "Goedkoopschap is een full-stack applicatie waarin de client gebruik maakt van een NodeJS REST-api om op verschillende supermarkten tegelijk te kunnen zoeken.",
+        "what": "Goedkoopschap.nl is een full-stack applicatie waarin de client gebruik maakt van een NodeJS REST-api om op verschillende supermarkten tegelijk te kunnen zoeken.",
         "how": "<h4 class=\"text-xl font-light text-grey-dark\">ExpressJS</h4><p class=\"text-midnight\">Om een simpele REST api te kunnen maken heb ik een ExpressJS gebruikt, deze wordt op een NodeJS server gedraaid. Voor inkomende HTTP verzoeken staat dit op een nginx server.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">MongoDB</h4><p class=\"text-midnight\">Alle zoektermen en producten worden gecached en opgeslagen in een MongoDB (database) om volgende verzoeken te versnellen. Er is hier gekozen voor een nosql formaat omdat het flexibel en snel is.</p>"
       }
     },
@@ -41,8 +41,8 @@
         "alt": "Afbeelding website niekh.com"
       },
       "details": {
-        "what": "Deze website is voor mij back to basics, ik heb gekozen om AlpineJS te gebruiken in plaats van Vue omdat dit wat lichter is maar toch meer flexibiliteit dan vanilla JS geeft.",
-        "how": "<h4 class=\"text-xl font-light text-grey-dark\">AlpineJS</h4><p class=\"text-midnight\">AlineJS is lichter dan Vue, maar biedt veel van dezelfde core functionaliteit. Deze website gebruikt het voor alles javascript gericht.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Webpack</h4><p class=\"text-midnight\">Om alle css, json, javascript en afbeeldingen te laden en orderen heb ik voor het eerst webpack gebruikt.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Tailwindcss</h4><p class=\"text-midnight\">Om een snel responsive design te maken is tailwind css gebruikt.</p>"
+        "what": "Deze website is voor mij back to basics, ik heb gekozen om AlpineJS te gebruiken in plaats van VueJS omdat dit wat lichter is maar toch meer flexibiliteit dan vanilla JS geeft.",
+        "how": "<h4 class=\"text-xl font-light text-grey-dark\">AlpineJS</h4><p class=\"text-midnight\">AlpineJS is lichter dan Vue, maar biedt veel van dezelfde core functionaliteit. Deze website gebruikt het voor alles javascript gericht.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Webpack</h4><p class=\"text-midnight\">Om alle css, json, javascript en afbeeldingen te laden en orderen heb ik voor het eerst webpack gebruikt.</p><h4 class=\"text-xl font-light text-grey-dark mt-4\">Tailwindcss</h4><p class=\"text-midnight\">Om een snel responsive design te maken is tailwind css gebruikt.</p>"
       }
     },
     {
