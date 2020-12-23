@@ -400,9 +400,9 @@
                 </div>
                 <div class="h-30vh md:h-40vh w-full lg:h-auto lg:w-1/2 mt-8 lg:my-auto">
                   <img
-                    :src="project.image.src"
+                    :src="project.showcaseImage.file.url"
                     class="w-full h-full object-cover object-top lg:object-left-top"
-                    :alt="project.image.alt"
+                    :alt="project.showcaseImage.description"
                   />
                 </div>
               </div>
@@ -415,11 +415,17 @@
                 <div class="w-full h-full px-4 pb-4 lg:px-8 lg:pb-8 flex flex-col xl:flex-row">
                   <div class="flex flex-col w-full xl:w-1/2 xl:pr-4">
                     <h3 class="text-xl text-midnight font-semibold">Wat</h3>
-                    <p class="mt-2 text-midnight text-md sm:text-lg" x-text="project.details.what"></p>
+                    <div
+                      class="mt-2 text-midnight text-md sm:text-lg rich-text"
+                      x-html="project.detailedInformationWhat"
+                    ></div>
                   </div>
                   <div class="flex flex-col w-full xl:w-1/2 xl:pl-4 mt-6 xl:mt-0">
                     <h3 class="text-xl text-midnight font-semibold">Hoe</h3>
-                    <p class="mt-2 text-midnight text-md sm:text-lg" x-html="project.details.how"></p>
+                    <div
+                      class="mt-2 text-midnight text-md sm:text-lg rich-text"
+                      x-html="project.detailedInformationHow"
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -446,8 +452,8 @@
               class="rounded-lg col-span-2 h-8 border-2 border-blue bg-grey-lighter px-2"
             />
             <label for="email_field" class="text-white font-semibold col-span-1 mx-auto my-auto col-start-1"
-              >E-mail</label
-            >
+              >E-mail
+            </label>
             <input
               required
               oninvalid="this.setCustomValidity('Dit veld is verplicht')"
@@ -574,10 +580,8 @@
 
   function work() {
     return {
-      setup() {
-        fetch('static/work.json')
-          .then((response) => response.json())
-          .then((json) => (this.work = json.work));
+      async setup() {
+        this.work = await window.retrieveContentful();
       },
       work: null,
       expandedWorkSection: null,
