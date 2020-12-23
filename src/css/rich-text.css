@@ -1,0 +1,11 @@
+.rich-text h3 {
+  font-weight: lighter;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: rgba(135, 149, 161);
+}
+
+.rich-text p {
+  color: rgba(34, 41, 47);
+  margin-bottom: 1rem;
+}
