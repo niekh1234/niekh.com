@@ -175,7 +175,9 @@
                 "
                 class="inline-flex items-center py-2 mr-auto text-xl font-semibold text-orange hover:underline"
               >
-                {{ expandedWorkSection !== project.handle ? 'Details' : 'Verbergen' }}
+                <p>
+                  {{ expandedWorkSection !== project.handle ? 'Details' : 'Verbergen' }}
+                </p>
                 <svg
                   class="w-6 h-6 mt-1 transition-transform duration-200 transform stroke-current text-midnight"
                   :class="expandedWorkSection !== project.handle ? '' : '-rotate-180'"
@@ -315,9 +317,6 @@
           </a>
         </div>
       </div>
-      <p class="max-w-5xl mx-auto text-lg text-white">
-        {{ activeNavItem }} {{ expandedWorkSection }}
-      </p>
     </footer>
   </main>
 </template>

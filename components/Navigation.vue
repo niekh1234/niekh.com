@@ -32,9 +32,9 @@
     </nav>
 
     <div
+      @click="showMobileMenu = !showMobileMenu"
       class="fixed flex items-center justify-center w-16 h-16 p-2 transition-all duration-300 rounded-full bg-midnight right-4 md:-right-16"
       style="bottom: 5%; z-index: 100"
-      @click="showMobileMenu = !showMobileMenu"
     >
       <svg
         class="w-full h-full text-white stroke-current"
@@ -91,6 +91,10 @@ export default {
     this.secondaryColor = this.active % 2 === 0 ? 'bg-white' : 'bg-blue';
     this.borderColor = this.active % 2 === 0 ? 'border-white' : 'border-blue';
     this.textColor = this.active % 2 === 0 ? 'text-white' : 'text-blue';
+  },
+
+  mounted() {
+    console.log('ÍM ALLIVEEEEEE');
   },
 };
 </script>
