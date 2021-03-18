@@ -49,6 +49,7 @@
 
       <!-- Navigate to second section arrow -->
       <button
+        @click="smoothScrollTo(2)"
         class="absolute bottom-0 z-40 animate-bounce"
         style="left: 50%"
         aria-label="Navigeer naar de tweede sectie"
