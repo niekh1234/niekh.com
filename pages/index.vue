@@ -28,8 +28,8 @@
             class="mt-4 text-xl font-medium leading-7 xs:leading-10 xs:mt-8 text-grey-darker md:text-2xl"
           >
             Zeg maar dag tegen
-            <span class="font-semibold text-white cursor-pointer bg-orange"> Wordpress</span>
-            , ik maak met
+            <span class="font-semibold text-white cursor-pointer bg-orange"> Wordpress,</span>
+            ik maak met
             <span class="text-white bg-blue">moderne technologiën</span>
             websites en webapps die
             <u style="text-decoration-color: rgba(52, 144, 220)">goedkoper</u>,
@@ -126,14 +126,14 @@
       class="flex flex-col items-center w-full min-h-screen py-16 bg-grey-lightest"
       id="section_3"
     >
-      <section class="flex flex-col items-center w-full max-w-5xl px-8">
+      <section class="flex flex-col items-center w-full max-w-5xl px-4 sm:px-8">
         <h2 class="text-4xl font-bold text-blue">Mijn werk</h2>
 
         <template v-if="content.work && content.work !== null">
           <div
             v-for="(project, i) in content.work.body"
             :key="i"
-            class="grid w-full grid-cols-1 p-6 mt-8 transition-all duration-200 transform bg-white rounded-lg shadow-lg gap-x-4 gap-y-8 hover:-translate-y-2 hover:shadow-xl grid-rows-auto md:grid-cols-2 md:grid-rows-auto"
+            class="grid w-full grid-cols-1 p-4 mt-8 transition-all duration-200 transform bg-white rounded-lg shadow-lg sm:p-6 gap-x-4 gap-y-8 hover:-translate-y-2 hover:shadow-xl grid-rows-auto md:grid-cols-2 md:grid-rows-auto"
           >
             <div class="flex flex-col row-start-2 md:row-start-auto">
               <p>
