@@ -170,15 +170,15 @@
               <button
                 @click="
                   expandedWorkSection === null
-                    ? (expandedWorkSection = project)
+                    ? (expandedWorkSection = project.handle)
                     : (expandedWorkSection = null)
                 "
                 class="inline-flex items-center py-2 mr-auto text-xl font-semibold text-orange hover:underline"
               >
-                {{ expandedWorkSection !== project ? 'Details' : 'Verbergen' }}
+                {{ expandedWorkSection !== project.handle ? 'Details' : 'Verbergen' }}
                 <svg
                   class="w-6 h-6 mt-1 transition-transform duration-200 transform stroke-current text-midnight"
-                  :class="expandedWorkSection !== project ? '' : '-rotate-180'"
+                  :class="expandedWorkSection !== project.handle ? '' : '-rotate-180'"
                   fill="none"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -203,12 +203,12 @@
               />
             </div>
             <div
-              v-if="expandedWorkSection === project"
+              v-if="expandedWorkSection === project.handle"
               v-html="project.content['description what'].body"
               class="prose"
             ></div>
             <div
-              v-if="expandedWorkSection === project"
+              v-if="expandedWorkSection === project.handle"
               v-html="project.content['description how'].body"
               class="prose"
             ></div>
@@ -315,12 +315,28 @@
           </a>
         </div>
       </div>
+      <p class="max-w-5xl mx-auto text-lg text-white">
+        {{ activeNavItem }} {{ expandedWorkSection }}
+      </p>
     </footer>
   </main>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      navItems: [
+        { name: 'Introductie' },
+        { name: 'Wat ik doe' },
+        { name: 'Werk' },
+        { name: 'Contact' },
+      ],
+      activeNavItem: 0,
+      expandedWorkSection: null,
+    };
+  },
+
   head() {
     return {
       title: 'Niek Hagen | Moderne websites',
@@ -335,19 +351,6 @@ export default {
     };
   },
 
-  data() {
-    return {
-      skills: null,
-      navItems: [
-        { name: 'Introductie' },
-        { name: 'Wat ik doe' },
-        { name: 'Werk' },
-        { name: 'Contact' },
-      ],
-      activeNavItem: 0,
-      expandedWorkSection: null,
-    };
-  },
   async asyncData({ $http }) {
     const { content } = await $http.$get('http://cms.niekh.com/api/public/pages/home');
     return { content };
