@@ -129,7 +129,7 @@
       <section class="flex flex-col items-center w-full max-w-5xl px-8">
         <h2 class="text-4xl font-bold text-blue">Mijn werk</h2>
 
-        <template v-if="content.work">
+        <template v-if="content.work && content.work !== null">
           <div
             v-for="(project, i) in content.work.body"
             :key="i"
@@ -141,17 +141,19 @@
             "
           >
             <div class="flex flex-col row-start-2 md:row-start-auto">
-              <time class="text-xl font-light text-grey" :time="project.content.date.body">{{
-                capitalizeFirst(
-                  new Date(project.content.date.body).toLocaleString('nl-NL', {
-                    month: 'long',
-                    year: 'numeric',
-                  })
-                )
-              }}</time>
+              <p>
+                <time class="text-xl font-light text-grey" :datetime="project.content.date.body">{{
+                  capitalizeFirst(
+                    new Date(project.content.date.body).toLocaleString('nl-NL', {
+                      month: 'long',
+                      year: 'numeric',
+                    })
+                  )
+                }}</time>
+              </p>
               <a
                 class="mt-2 text-2xl font-bold underline text-midnight hover:no-underline"
-                :href="project.content.link.body"
+                :href="project.content.link.body || '/'"
               >
                 {{ project.content.title.body }}
               </a>
@@ -196,8 +198,10 @@
             </div>
             <div class="row-start-1 md:row-start-auto">
               <img
-                :src="'http://cms.niekh.com/api/public/images/' + project.content.showcase.body.src"
-                :alt="project.content.showcase.body.alt"
+                :src="
+                  'https://cms.niekh.com/api/public/images/' + project.content.showcase.body.src
+                "
+                :alt="project.content.showcase.body.alt || 'Afbeelding project'"
                 class="w-full"
               />
             </div>
@@ -322,7 +326,7 @@
 export default {
   head() {
     return {
-      title: 'Niek Hagen, Websites en Web Development',
+      title: 'Niek Hagen | Moderne websites',
       meta: [
         {
           hid: 'description',
@@ -353,7 +357,6 @@ export default {
   },
 
   mounted() {
-    console.log(this.content);
     this.scrollHandler();
     window.addEventListener('scroll', this.scrollHandler);
   },
@@ -365,9 +368,13 @@ export default {
   methods: {
     scrollHandler() {
       for (let item in this.navItems) {
-        const boundingRect = document
-          .querySelector(`#section_${parseInt(item, 10) + 1}`)
-          .getBoundingClientRect();
+        const qSelector = document.querySelector(`#section_${parseInt(item, 10) + 1}`);
+
+        if (qSelector === null) {
+          continue;
+        }
+
+        const boundingRect = qSelector.getBoundingClientRect();
 
         const activationPoint = Math.max(boundingRect.top + window.scrollY - 600, 0);
         const deactivationPoint = Math.max(boundingRect.bottom + window.scrollY - 600, 0);
@@ -391,16 +398,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.custom-shape-divider-bottom-1607724471 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  transform: rotateY(180deg);
-}
-
-.custom-shape-divider-bottom-1607724471 .shape-fill {
-  fill: #3490dc;
-}
-</style>
