@@ -11,7 +11,7 @@
       class="relative flex flex-col items-center justify-center w-screen h-screen"
       id="section_1"
     >
-      <Background class="absolute top-0 right-0"></Background>
+      <img src="~assets/svg/meteors.svg" class="absolute inset-0 w-screen h-screen" />
       <!-- content -->
       <section class="z-50 flex flex-row max-w-5xl my-auto lg:max-w-4xl h-3/5 lg:h-1/2">
         <div class="flex flex-col justify-center w-full p-4 mx-0 md:mx-12">
@@ -198,6 +198,7 @@
             </div>
             <div class="row-start-1 md:row-start-auto">
               <img
+                v-if="project.content.showcase.body"
                 :src="
                   'https://cms.niekh.com/api/public/images/' + project.content.showcase.body.src
                 "

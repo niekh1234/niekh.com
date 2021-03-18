@@ -26,7 +26,7 @@ export default {
   buildModules: ['@nuxtjs/tailwindcss'],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxt/http'],
+  modules: ['@nuxt/http', '@nuxtjs/svg'],
 
   http: {
     proxy: true,
