@@ -169,16 +169,16 @@
 
               <button
                 @click="
-                  expandedWorkSection !== i
-                    ? (expandedWorkSection = i)
+                  expandedWorkSection === null
+                    ? (expandedWorkSection = project)
                     : (expandedWorkSection = null)
                 "
                 class="inline-flex items-center py-2 mr-auto text-xl font-semibold text-orange hover:underline"
               >
-                {{ expandedWorkSection !== i ? 'Details' : 'Verbergen' }}
+                {{ expandedWorkSection !== project ? 'Details' : 'Verbergen' }}
                 <svg
                   class="w-6 h-6 mt-1 transition-transform duration-200 transform stroke-current text-midnight"
-                  :class="expandedWorkSection !== i ? '' : '-rotate-180'"
+                  :class="expandedWorkSection !== project ? '' : '-rotate-180'"
                   fill="none"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -203,12 +203,12 @@
               />
             </div>
             <div
-              v-if="expandedWorkSection === i"
+              v-if="expandedWorkSection === project"
               v-html="project.content['description what'].body"
               class="prose"
             ></div>
             <div
-              v-if="expandedWorkSection === i"
+              v-if="expandedWorkSection === project"
               v-html="project.content['description how'].body"
               class="prose"
             ></div>
