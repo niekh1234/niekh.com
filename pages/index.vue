@@ -133,12 +133,7 @@
           <div
             v-for="(project, i) in content.work.body"
             :key="i"
-            class="grid w-full p-6 mt-8 transition-all duration-200 transform bg-white rounded-lg shadow-lg gap-x-4 gap-y-8 hover:-translate-y-2 hover:shadow-xl"
-            :class="
-              expandedWorkSection === i
-                ? 'grid-cols-1 grid-rows-auto md:grid-cols-2 md:grid-rows-auto'
-                : 'grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1'
-            "
+            class="grid w-full grid-cols-1 p-6 mt-8 transition-all duration-200 transform bg-white rounded-lg shadow-lg gap-x-4 gap-y-8 hover:-translate-y-2 hover:shadow-xl grid-rows-auto md:grid-cols-2 md:grid-rows-auto"
           >
             <div class="flex flex-col row-start-2 md:row-start-auto">
               <p>
@@ -152,7 +147,7 @@
                 }}</time>
               </p>
               <a
-                class="mt-2 text-2xl font-bold underline text-midnight hover:no-underline"
+                class="mt-2 text-2xl font-bold underline truncate text-midnight hover:no-underline"
                 :href="project.content.link.body || '/'"
               >
                 {{ project.content.title.body }}
