@@ -92,9 +92,5 @@ export default {
     this.borderColor = this.active % 2 === 0 ? 'border-white' : 'border-blue';
     this.textColor = this.active % 2 === 0 ? 'text-white' : 'text-blue';
   },
-
-  mounted() {
-    console.log('ÍM ALLIVEEEEEE');
-  },
 };
 </script>
