@@ -224,7 +224,7 @@
         <h3 class="w-5/6 mt-2 text-xl font-normal text-center text-grey-lighter sm:text-2xl">
           Laat een bericht achter of stuur mij een email
         </h3>
-        <form name="contact" class="grid w-full grid-cols-3 grid-rows-2 gap-4 mt-8" netlify>
+        <form name="contact" class="grid w-full grid-cols-3 grid-rows-2 gap-4 mt-8">
           <label for="name_field" class="col-span-1 mx-auto my-auto font-semibold text-white"
             >Naam</label
           >
