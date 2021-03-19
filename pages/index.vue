@@ -217,17 +217,18 @@
         </template>
       </section>
     </article>
-    <footer class="flex flex-col items-center w-screen h-auto py-16 bg-blue-darkest" id="section_4">
+    <footer
+      class="flex flex-col items-center w-screen h-auto py-24 bg-blue-darkest text-blue-lightest"
+      id="section_4"
+    >
       <div class="flex flex-col items-center w-11/12 h-auto sm:w-5/6 md:w-3/4 xl:w-2/3 2xl:w-1/2">
-        <h3 class="mt-2 text-3xl font-bold text-center text-white sm:text-4xl">Neem contact op</h3>
-        <h3 class="w-5/6 mt-2 text-xl font-normal text-center text-grey-lighter sm:text-2xl">
+        <h3 class="mt-2 text-3xl font-bold text-center sm:text-4xl">Neem contact op</h3>
+        <h3 class="w-5/6 mt-2 text-xl font-normal text-center sm:text-2xl">
           Laat een bericht achter of stuur mij een email
         </h3>
         <form name="contact" class="grid w-full grid-cols-3 grid-rows-2 gap-4 mt-8" netlify>
           <input type="hidden" name="form-name" value="contact" />
-          <label for="name_field" class="col-span-1 mx-auto my-auto font-semibold text-white">
-            Naam
-          </label>
+          <label for="name_field" class="col-span-1 mx-auto my-auto font-semibold"> Naam </label>
           <input
             required
             oninvalid="this.setCustomValidity('Dit veld is verplicht')"
@@ -235,12 +236,9 @@
             id="name_field"
             type="text"
             name="name"
-            class="h-8 col-span-2 px-2 border-2 rounded-lg border-blue bg-grey-lighter"
+            class="h-8 col-span-2 px-2 border-2 rounded-lg border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark transition-colors duration-200"
           />
-          <label
-            for="email_field"
-            class="col-span-1 col-start-1 mx-auto my-auto font-semibold text-white"
-          >
+          <label for="email_field" class="col-span-1 col-start-1 mx-auto my-auto font-semibold">
             E-mail
           </label>
           <input
@@ -250,28 +248,25 @@
             id="email_field"
             type="text"
             name="email"
-            class="col-span-2 px-2 border-2 rounded-lg border-blue bg-grey-lighter"
+            class="col-span-2 px-2 border-2 rounded-lg border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark transition-colors duration-200"
           />
-          <label
-            for="question_field"
-            class="col-span-1 col-start-1 mx-auto my-auto font-semibold text-white"
-          >
+          <label for="question_field" class="col-span-1 col-start-1 mx-auto my-auto font-semibold">
             Bericht
           </label>
           <textarea
             name="question_description"
             id="question_field"
-            class="col-span-2 col-start-2 row-span-2 px-2 border-2 rounded-lg border-blue bg-grey-lighter"
+            class="col-span-2 col-start-2 row-span-2 px-2 border-2 rounded-lg border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark transition-colors duration-200"
           ></textarea>
           <button
             type="submit"
-            class="col-start-1 row-start-5 px-2 py-1 my-auto ml-auto text-xl font-semibold rounded-lg lg:col-start-3 text-grey-lighter bg-orange"
+            class="col-start-1 row-start-5 px-4 py-2 my-auto ml-auto font-semibold rounded-lg lg:col-start-3 text-blue-darkest bg-white"
           >
             Versturen
           </button>
         </form>
       </div>
-      <hr class="w-11/12 h-2 mt-12" />
+      <hr class="w-11/12 h-2 mt-16 border-blue-darker" />
       <div
         class="flex flex-row items-center justify-between w-full h-auto px-8 mb-16 md:px-16 lg:mb-4"
       >
