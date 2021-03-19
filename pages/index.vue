@@ -225,10 +225,10 @@
           Laat een bericht achter of stuur mij een email
         </h3>
         <form name="contact" class="grid w-full grid-cols-3 grid-rows-2 gap-4 mt-8" netlify>
-          <input type="hidden" name="contact" value="contact"/>
-          <label for="name_field" class="col-span-1 mx-auto my-auto font-semibold text-white"
-            >Naam</label
-          >
+          <input type="hidden" name="form-name" value="contact" />
+          <label for="name_field" class="col-span-1 mx-auto my-auto font-semibold text-white">
+            Naam
+          </label>
           <input
             required
             oninvalid="this.setCustomValidity('Dit veld is verplicht')"
@@ -241,7 +241,8 @@
           <label
             for="email_field"
             class="col-span-1 col-start-1 mx-auto my-auto font-semibold text-white"
-            >E-mail
+          >
+            E-mail
           </label>
           <input
             required
@@ -255,8 +256,9 @@
           <label
             for="question_field"
             class="col-span-1 col-start-1 mx-auto my-auto font-semibold text-white"
-            >Bericht</label
           >
+            Bericht
+          </label>
           <textarea
             name="question_description"
             id="question_field"
