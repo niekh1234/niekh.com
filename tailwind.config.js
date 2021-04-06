@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   important: true,
   purge: [
@@ -8,11 +10,11 @@ module.exports = {
     './nuxt.config.{js,ts}',
   ],
   theme: {
+    screens: {
+      xs: '350px',
+      ...defaultTheme.screens,
+    },
     extend: {
-      screens: {
-        xs: { min: '350px' },
-      },
-
       height: {
         '1/2': '50%',
         '1/3': '33.33333333%',

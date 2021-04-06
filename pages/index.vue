@@ -45,12 +45,6 @@
             >
               Contact
             </button>
-            <nuxt-link
-              to="/blog"
-              class="px-6 py-3 text-2xl font-bold transition-all duration-200 bg-white border-4 rounded-full text-orange hover:bg-grey-lightest md:px-12 hover:shadow-xl border-orange"
-            >
-              Blog
-            </nuxt-link>
           </div>
         </div>
       </section>
