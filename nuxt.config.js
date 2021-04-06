@@ -22,10 +22,18 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: ['@nuxtjs/tailwindcss'],
+  buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/dotenv', '@nuxtjs/google-analytics'],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['@nuxt/http', '@nuxtjs/svg'],
+
+  tailwindcss: {
+    jit: true,
+  },
+
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID,
+  },
 
   http: {
     proxy: true,

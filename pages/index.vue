@@ -8,7 +8,7 @@
     ></Navigation>
 
     <article
-      class="relative flex flex-col items-center justify-center w-screen h-screen"
+      class="relative flex flex-col items-center justify-center w-screen min-h-screen"
       id="section_1"
     >
       <img src="~assets/svg/meteors.svg" class="absolute inset-0 w-screen h-screen" />
@@ -25,7 +25,7 @@
           </h2>
 
           <p
-            class="mt-4 text-xl font-medium leading-7 xs:leading-10 xs:mt-8 text-grey-darker md:text-2xl"
+            class="mt-4 text-lg font-medium leading-7 xs:text-xl xs:leading-10 xs:mt-8 text-grey-darker md:text-2xl"
           >
             Zeg maar dag tegen
             <span class="font-semibold text-white cursor-pointer bg-orange"> Wordpress,</span>
@@ -38,12 +38,20 @@
             <u style="text-decoration-color: rgba(52, 144, 220)">sneller</u>
             zijn.<br />
           </p>
-          <button
-            class="px-6 py-3 mt-12 mr-auto text-2xl font-bold text-white transition-all rounded-full bg-blue md:px-12 md:py-4 hover:shadow-xl"
-            @click="smoothScrollTo(4)"
-          >
-            Contact
-          </button>
+          <div class="inline-flex items-center mt-12 space-x-8">
+            <button
+              class="px-6 py-3 text-2xl font-bold text-white transition-all duration-200 border-4 rounded-full bg-blue md:px-12 hover:shadow-xl hover:bg-blue-dark border-blue hover:border-blue-dark"
+              @click="smoothScrollTo(4)"
+            >
+              Contact
+            </button>
+            <nuxt-link
+              to="/blog"
+              class="px-6 py-3 text-2xl font-bold transition-all duration-200 bg-white border-4 rounded-full text-orange hover:bg-grey-lightest md:px-12 hover:shadow-xl border-orange"
+            >
+              Blog
+            </nuxt-link>
+          </div>
         </div>
       </section>
 
@@ -155,7 +163,7 @@
               <p class="mt-4 font-normal text-midnight">
                 {{ project.content.excerpt.body }}
               </p>
-              <div class="inline-flex flex-wrap items-center w-full mt-auto">
+              <div class="inline-flex flex-wrap items-center w-full mt-4 md:mt-auto">
                 <p class="mr-4 text-grey-dark text-light">Technologiën:</p>
                 <div
                   v-for="(tech, i) in JSON.parse(project.content.technologies.body)"
@@ -172,7 +180,7 @@
                     ? (expandedWorkSection = project.handle)
                     : (expandedWorkSection = null)
                 "
-                class="inline-flex items-center py-2 mr-auto text-xl font-semibold text-orange hover:underline"
+                class="inline-flex items-center py-2 mt-4 mr-auto text-xl font-semibold md:mt-0 text-orange hover:underline"
               >
                 <p>
                   {{ expandedWorkSection !== project.handle ? 'Details' : 'Verbergen' }}
@@ -236,7 +244,7 @@
             id="name_field"
             type="text"
             name="name"
-            class="h-8 col-span-2 px-2 border-2 rounded-lg border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark transition-colors duration-200"
+            class="h-8 col-span-2 px-2 transition-colors duration-200 border-2 rounded-lg border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark"
           />
           <label for="email_field" class="col-span-1 col-start-1 mx-auto my-auto font-semibold">
             E-mail
@@ -248,7 +256,7 @@
             id="email_field"
             type="text"
             name="email"
-            class="col-span-2 px-2 border-2 rounded-lg border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark transition-colors duration-200"
+            class="col-span-2 px-2 transition-colors duration-200 border-2 rounded-lg border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark"
           />
           <label for="question_field" class="col-span-1 col-start-1 mx-auto my-auto font-semibold">
             Bericht
@@ -256,11 +264,11 @@
           <textarea
             name="question_description"
             id="question_field"
-            class="col-span-2 col-start-2 row-span-2 px-2 border-2 rounded-lg border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark transition-colors duration-200"
+            class="col-span-2 col-start-2 row-span-2 px-2 transition-colors duration-200 border-2 rounded-lg border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark"
           ></textarea>
           <button
             type="submit"
-            class="col-start-1 row-start-5 px-4 py-2 my-auto ml-auto font-semibold rounded-lg lg:col-start-3 text-blue-darkest bg-white"
+            class="col-start-1 row-start-5 px-4 py-2 my-auto ml-auto font-semibold bg-white rounded-lg lg:col-start-3 text-blue-darkest"
           >
             Versturen
           </button>

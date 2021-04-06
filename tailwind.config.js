@@ -1,4 +1,5 @@
 module.exports = {
+  important: true,
   purge: [
     './components/**/*.{vue,js}',
     './layouts/**/*.vue',
@@ -9,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: { min: '350px', max: '639px' },
+        xs: { min: '350px' },
       },
 
       height: {
