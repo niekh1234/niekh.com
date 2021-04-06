@@ -33,10 +33,11 @@
 
     <div
       @click="showMobileMenu = !showMobileMenu"
-      class="fixed flex items-center justify-center w-16 h-16 p-2 transition-all duration-300 rounded-full bg-midnight right-4 md:-right-16"
+      class="fixed flex items-center justify-center w-16 h-16 p-2 transition-all duration-300 border-2 border-white rounded-full shadow-lg right-4 md:-right-16 bg-blue-darkest hover:shadow-2xl"
       style="bottom: 5%; z-index: 100"
     >
       <svg
+        v-if="!showMobileMenu"
         class="w-full h-full text-white stroke-current"
         fill="none"
         viewBox="0 0 24 24"
@@ -50,8 +51,23 @@
         ></path>
       </svg>
 
+      <svg
+        v-else
+        class="w-full h-full text-white stroke-current"
+        fill="none"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        ></path>
+      </svg>
+
       <div
-        class="absolute flex flex-col items-start w-48 py-2 transition-all rounded-lg bg-midnight bottom-20"
+        class="absolute flex flex-col items-start w-48 py-2 transition-all border-2 border-white rounded-lg bg-blue-darkest bottom-20"
         :class="showMobileMenu ? 'opacity-100 right-2' : 'opacity-0 -right-56'"
         @click.stop
       >
@@ -87,6 +103,7 @@ export default {
   },
 
   created() {
+    console.log(this.active);
     this.backgroundColor = this.active % 2 === 0 ? 'bg-blue' : 'bg-white';
     this.secondaryColor = this.active % 2 === 0 ? 'bg-white' : 'bg-blue';
     this.borderColor = this.active % 2 === 0 ? 'border-white' : 'border-blue';
