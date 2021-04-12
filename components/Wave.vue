@@ -24,7 +24,7 @@
     <defs>
       <linearGradient id="gradient">
         <stop offset="5%" stop-color="#3490dc88"></stop>
-        <stop offset="95%" stop-color="#3490dc88"></stop>
+        <stop offset="95%" stop-color="#3490dc88" stop-opacity="0.5"></stop>
       </linearGradient>
     </defs>
     <path

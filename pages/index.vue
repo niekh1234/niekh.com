@@ -81,46 +81,50 @@
 
     <article class="flex flex-col items-center w-full min-h-screen py-16 bg-blue" id="section_2">
       <div class="flex flex-col items-center self-center h-full max-w-5xl lg:max-w-4xl">
-        <p class="text-xl text-center text-white uppercase text-light">Skills</p>
-        <h2 class="mt-2 text-3xl font-bold text-center text-white sm:text-4xl">
-          Wat doe ik allemaal?
-        </h2>
-        <h3 class="max-w-3xl mt-6 text-xl font-normal text-center text-grey-lighter sm:text-2xl">
-          Door het gebruik van moderne technologiën voor het web maak ik razendsnelle en simpele
-          gebruikerservaringen.
-        </h3>
-
-        <div
-          class="grid w-full h-full grid-cols-1 grid-rows-6 gap-1 mt-8 lg:grid-cols-2 lg:grid-rows-3"
-        >
-          <template v-if="content.skills.body !== null">
-            <div v-for="skill in content.skills.body" :key="skill.handle" class="inline-flex p-4">
-              <div class="flex justify-center w-1/6 h-full py-3">
-                <svg
-                  class="w-12 h-12 p-2 bg-white rounded-lg stroke-current text-orange"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    :d="skill.content.icon.body"
-                  ></path>
-                </svg>
-              </div>
-              <div class="flex flex-col w-5/6 h-full px-2 py-3">
-                <h3 class="text-xl font-medium text-white">
-                  {{ skill.content.title.body }}
-                </h3>
-                <p class="text-sm font-normal text-white">
-                  {{ skill.content.content.body }}
-                </p>
-              </div>
-            </div>
-          </template>
+        <div class="px-4">
+          <p class="text-xl text-center text-white uppercase text-light">Skills</p>
+          <h2 class="mt-2 text-3xl font-bold text-center text-white sm:text-4xl">
+            Wat doe ik allemaal?
+          </h2>
+          <h3 class="max-w-3xl mt-6 text-xl font-normal text-center text-grey-lighter sm:text-2xl">
+            Door het gebruik van moderne technologiën voor het web maak ik razendsnelle en simpele
+            gebruikerservaringen.
+          </h3>
         </div>
+
+        <section class="grid">
+          <div
+            class="grid w-full h-full grid-cols-1 grid-rows-6 gap-1 mt-8 lg:grid-cols-2 lg:grid-rows-3"
+          >
+            <template v-if="content.skills.body !== null">
+              <div v-for="skill in content.skills.body" :key="skill.handle" class="inline-flex p-4">
+                <div class="flex justify-center w-1/6 h-full py-3">
+                  <svg
+                    class="w-12 h-12 p-2 bg-white rounded-lg stroke-current text-orange"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      :d="skill.content.icon.body"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col w-5/6 h-full px-2 py-3">
+                  <h3 class="text-xl font-medium text-white">
+                    {{ skill.content.title.body }}
+                  </h3>
+                  <p class="text-sm font-normal text-white">
+                    {{ skill.content.content.body }}
+                  </p>
+                </div>
+              </div>
+            </template>
+          </div>
+        </section>
       </div>
     </article>
 
