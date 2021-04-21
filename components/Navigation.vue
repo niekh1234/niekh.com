@@ -103,7 +103,6 @@ export default {
   },
 
   created() {
-    console.log(this.active);
     this.backgroundColor = this.active % 2 === 0 ? 'bg-blue' : 'bg-white';
     this.secondaryColor = this.active % 2 === 0 ? 'bg-white' : 'bg-blue';
     this.borderColor = this.active % 2 === 0 ? 'border-white' : 'border-blue';

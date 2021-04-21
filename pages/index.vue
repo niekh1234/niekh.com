@@ -11,7 +11,11 @@
       class="relative flex flex-col items-center justify-center w-screen min-h-screen"
       id="section_1"
     >
-      <img src="~assets/svg/meteors.svg" class="absolute inset-0 w-screen h-screen" />
+      <img
+        src="~assets/svg/meteors.svg"
+        alt="meteors background image"
+        class="absolute inset-0 w-screen h-screen"
+      />
       <!-- content -->
       <section class="z-50 inline-flex max-w-5xl my-auto lg:max-w-4xl h-3/5 lg:h-1/2">
         <div class="flex flex-col justify-center w-full p-4 mx-0 md:mx-12">
@@ -205,7 +209,9 @@
                 :src="
                   'https://cms.niekh.com/api/public/images/' + project.content.showcase.body.src
                 "
-                :alt="project.content.showcase.body.alt || 'Afbeelding project'"
+                :alt="
+                  'Website product: ' + project.content.showcase.body.alt || 'Afbeelding project'
+                "
                 class="w-full"
               />
             </div>
@@ -353,13 +359,13 @@ export default {
 
   head() {
     return {
-      title: 'Niek Hagen | Moderne websites',
+      title: 'Moderne websites | Niek Hagen',
       meta: [
         {
           hid: 'description',
           name: 'description',
           content:
-            'Zeg maar dag tegen Wordpress, laat je website maken door iemand die er verstand van heeft, dan is hij goedkoper voor jou, en sneller, moderner en makkelijker voor je klant. | Niek Hagen',
+            'Op zoek naar een snelle, unieke en goedkope website? Say no more, met moderne architectuur maak ik voor jouw klanten een prachtige ervaring. Check het | Niek Hagen',
         },
       ],
     };
