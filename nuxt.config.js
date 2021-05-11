@@ -34,10 +34,6 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['@nuxt/http', '@nuxtjs/svg'],
 
-  tailwindcss: {
-    jit: true,
-  },
-
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID,
   },
