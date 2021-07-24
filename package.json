@@ -12,14 +12,14 @@
     "@nuxt/http": "^0.6.4",
     "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/svg": "^0.1.12",
-    "@tailwindcss/typography": "^0.4.0",
+    "@tailwindcss/typography": "^0.4.1",
     "core-js": "^3.6.5",
-    "nuxt": "^2.2.0"
+    "nuxt": "^2.15.7"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/tailwindcss": "^4.1.1",
+    "@nuxtjs/tailwindcss": "^4.2.1",
     "autoprefixer": "^10.2.5",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
