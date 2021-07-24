@@ -25,23 +25,21 @@
           <h2
             class="mt-3 font-sans text-3xl font-semibold xs:text-4xl xs:mt-6 md:text-5xl text-blue"
           >
-            Razendsnelle websites
+            Moderne websites
           </h2>
 
-          <p
-            class="mt-4 text-lg font-medium leading-7 xs:text-xl xs:leading-10 xs:mt-8 text-grey-darker md:text-2xl"
+          <div
+            class="mt-4 text-lg font-medium leading-[5rem] xs:text-xl xs:leading-[15rem] xs:mt-8 text-grey-darker md:text-2xl"
           >
-            Zeg maar dag tegen
-            <span class="font-semibold text-white cursor-pointer bg-orange"> Wordpress,</span>
-            ik maak met
+            <span class="text-white bg-orange">Wordpress</span> is echt verleden tijd, ik maak met
             <span class="text-white bg-blue">moderne technologiën</span>
             websites en webapps die
-            <u style="text-decoration-color: rgba(52, 144, 220)">goedkoper</u>,
-            <u style="text-decoration-color: rgba(52, 144, 220)"> gebruiksvriendelijker</u>
+            <u style="text-decoration-color: rgba(52, 144, 220)">hoge conversies</u>,
+            <u style="text-decoration-color: rgba(52, 144, 220)"> effectieve interfaces</u>
             en
-            <u style="text-decoration-color: rgba(52, 144, 220)">sneller</u>
-            zijn.<br />
-          </p>
+            <u style="text-decoration-color: rgba(52, 144, 220)">lage kosten</u>
+            hebben.<br />
+          </div>
           <div class="inline-flex items-center mt-12 space-x-8">
             <button
               class="px-6 py-3 text-2xl font-bold text-white transition-all duration-200 border-4 rounded-full bg-blue md:px-12 hover:shadow-xl hover:bg-blue-dark border-blue hover:border-blue-dark"
@@ -86,13 +84,11 @@
     <article class="flex flex-col items-center w-full min-h-screen py-16 bg-blue" id="section_2">
       <div class="flex flex-col items-center self-center h-full max-w-5xl lg:max-w-4xl">
         <div class="px-4">
-          <p class="text-xl text-center text-white uppercase text-light">Skills</p>
-          <h2 class="mt-2 text-3xl font-bold text-center text-white sm:text-4xl">
-            Wat doe ik allemaal?
-          </h2>
-          <h3 class="max-w-3xl mt-6 text-xl font-normal text-center text-grey-lighter sm:text-2xl">
-            Door het gebruik van moderne technologiën voor het web maak ik razendsnelle en simpele
-            gebruikerservaringen.
+          <div class="text-xl text-center text-white uppercase text-light">Skills</div>
+          <h2 class="mt-2 text-3xl font-bold text-center text-white sm:text-4xl">Wat ik doe</h2>
+          <h3 class="max-w-3xl mt-6 text-xl font-normal text-center text-blue-lightest sm:text-2xl">
+            Door effectief gebruik te maken van de laatste technologien van het web probeer ik
+            geweldige gebruikerservaringen de maken.
           </h3>
         </div>
 
@@ -232,7 +228,7 @@
     <footer class="w-screen h-auto py-16 bg-blue-darkest text-blue-lightest" id="section_4">
       <div class="max-w-5xl p-8 mx-auto">
         <h3 class="mt-2 text-3xl font-bold text-center sm:text-4xl">Neem contact op</h3>
-        <h3 class="w-5/6 mt-2 text-xl font-normal text-center sm:text-2xl">
+        <h3 class="mt-2 text-xl font-normal text-center sm:text-2xl">
           Laat een bericht achter of stuur mij een email
         </h3>
         <form
