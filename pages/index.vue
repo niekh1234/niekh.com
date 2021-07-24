@@ -28,9 +28,7 @@
             Moderne websites
           </h2>
 
-          <div
-            class="mt-4 text-lg font-medium leading-[5rem] xs:text-xl xs:leading-[15rem] xs:mt-8 text-grey-darker md:text-2xl"
-          >
+          <div class="mt-4 text-lg font-medium xs:text-xl xs:mt-8 text-grey-darker md:text-2xl">
             <span class="text-white bg-orange">Wordpress</span> is echt verleden tijd, ik maak met
             <span class="text-white bg-blue">moderne technologiën</span>
             websites en webapps die
@@ -42,7 +40,7 @@
           </div>
           <div class="inline-flex items-center mt-12 space-x-8">
             <button
-              class="px-6 py-3 text-2xl font-bold text-white transition-all duration-200 border-4 rounded-full bg-blue md:px-12 hover:shadow-xl hover:bg-blue-dark border-blue hover:border-blue-dark"
+              class="px-6 py-3 text-2xl font-bold text-white transition-all duration-200 border-4 rounded-full  bg-blue md:px-12 hover:shadow-xl hover:bg-blue-dark border-blue hover:border-blue-dark"
               @click="smoothScrollTo(4)"
             >
               Contact
@@ -94,7 +92,7 @@
 
         <section class="grid">
           <div
-            class="grid w-full h-full grid-cols-1 grid-rows-6 gap-1 mt-8 lg:grid-cols-2 lg:grid-rows-3"
+            class="grid w-full h-full grid-cols-1 grid-rows-6 gap-1 mt-8  lg:grid-cols-2 lg:grid-rows-3"
           >
             <template v-if="content.skills.body !== null">
               <div v-for="skill in content.skills.body" :key="skill.handle" class="inline-flex p-4">
@@ -139,7 +137,7 @@
           <div
             v-for="(project, i) in content.work.body"
             :key="i"
-            class="grid w-full grid-cols-1 p-4 mt-8 transition-all duration-200 transform bg-white rounded-lg shadow-lg sm:p-6 gap-x-4 gap-y-8 hover:-translate-y-2 hover:shadow-xl grid-rows-auto md:grid-cols-2 md:grid-rows-auto"
+            class="grid w-full grid-cols-1 p-4 mt-8 transition-all duration-200 transform bg-white rounded-lg shadow-lg  sm:p-6 gap-x-4 gap-y-8 hover:-translate-y-2 hover:shadow-xl grid-rows-auto md:grid-cols-2 md:grid-rows-auto"
           >
             <div class="flex flex-col row-start-2 md:row-start-auto">
               <p>
@@ -178,13 +176,13 @@
                     ? (expandedWorkSection = project.handle)
                     : (expandedWorkSection = null)
                 "
-                class="inline-flex items-center py-2 mt-4 mr-auto text-xl font-semibold md:mt-0 text-orange hover:underline"
+                class="inline-flex items-center py-2 mt-4 mr-auto text-xl font-semibold  md:mt-0 text-orange hover:underline"
               >
                 <p>
                   {{ expandedWorkSection !== project.handle ? 'Details' : 'Verbergen' }}
                 </p>
                 <svg
-                  class="w-6 h-6 mt-1 transition-transform duration-200 transform stroke-current text-midnight"
+                  class="w-6 h-6 mt-1 transition-transform duration-200 transform stroke-current  text-midnight"
                   :class="expandedWorkSection !== project.handle ? '' : '-rotate-180'"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -245,7 +243,7 @@
             id="name_field"
             type="text"
             name="name"
-            class="h-10 col-span-3 px-2 transition-colors duration-200 border-2 rounded-lg sm:col-span-2 border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark"
+            class="h-10 col-span-3 px-2 transition-colors duration-200 border-2 rounded-lg  sm:col-span-2 border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark"
           />
           <label
             for="email_field"
@@ -260,7 +258,7 @@
             id="email_field"
             type="text"
             name="email"
-            class="h-10 col-span-3 px-2 transition-colors duration-200 border-2 rounded-lg sm:col-span-2 border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark"
+            class="h-10 col-span-3 px-2 transition-colors duration-200 border-2 rounded-lg  sm:col-span-2 border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark"
           />
           <label
             for="question_field"
@@ -271,11 +269,11 @@
           <textarea
             name="question_description"
             id="question_field"
-            class="h-16 col-span-3 px-2 transition-colors duration-200 border-2 rounded-lg sm:col-start-2 sm:col-span-2 border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark"
+            class="h-16 col-span-3 px-2 transition-colors duration-200 border-2 rounded-lg  sm:col-start-2 sm:col-span-2 border-blue-darkest bg-blue-darker focus:outline-none focus:border-blue-dark hover:border-blue-dark"
           ></textarea>
           <button
             type="submit"
-            class="w-full col-span-3 px-4 py-2 my-auto mt-6 ml-auto font-semibold bg-white rounded-lg text-blue-darkest sm:w-auto"
+            class="w-full col-span-3 px-4 py-2 my-auto mt-6 ml-auto font-semibold bg-white rounded-lg  text-blue-darkest sm:w-auto"
           >
             Versturen
           </button>
@@ -329,7 +327,7 @@
         <div class="w-full">
           <nuxt-link
             to="/blog"
-            class="mb-16 text-xl font-semibold text-white underline text-blue-lightest hover:no-underline"
+            class="mb-16 text-xl font-semibold text-white underline  text-blue-lightest hover:no-underline"
             >Blog</nuxt-link
           >
         </div>
